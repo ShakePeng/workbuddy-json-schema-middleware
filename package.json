@@ -1,0 +1,31 @@
+{
+  "name": "magpie-middleware-responses-json-format",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Pass Responses text.format JSON constraints to models through instructions for Magpie",
+  "type": "module",
+  "files": [
+    "responses-json-format.middleware.js",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [
+    "magpie",
+    "magpie-middleware",
+    "codex",
+    "responses",
+    "json-schema"
+  ],
+  "license": "MIT",
+  "magpie": {
+    "middleware": "./responses-json-format.middleware.js",
+    "options": {
+      "agents": [
+        "codex"
+      ],
+      "models": []
+    }
+  }
+}
