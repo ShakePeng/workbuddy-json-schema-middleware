@@ -12,21 +12,6 @@ Magpie 网关中间件，用于绕过 workbuddy-manager 丢失 Responses `text.f
 - 不修改模型、流式参数、工具定义或工具选择。
 - 同一请求重复执行不会重复追加。
 
-## 安装
-
-```sh
-cd /Users/shakepeng/studySpace/workbuddy-json-schema-middleware
-/Applications/magpie.app/Contents/MacOS/magpie plugin add .
-```
-
-安装后可只对 Codex 生效：
-
-```sh
-/Applications/magpie.app/Contents/MacOS/magpie plugin options /Users/shakepeng/studySpace/workbuddy-json-schema-middleware '{"agents":["codex"],"models":[]}'
-```
-
-Magpie 以安装时传入的路径作为本地包的名称，因此这里必须使用绝对路径；短名称只适用于 npm 包。
-
 ## 选项
 
 ```json
