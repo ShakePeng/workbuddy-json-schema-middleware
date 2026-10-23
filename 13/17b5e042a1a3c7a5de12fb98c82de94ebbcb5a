@@ -1,0 +1,30 @@
+test/responses-json-format.test.js
+  s_d39a1c837ec862::t_b0b756ef0e8cfe 1-50,52-139
+  s_d39a1c837ec862::t_ff66addc60e925 51
+package.json
+  s_d39a1c837ec862::t_b0b756ef0e8cfe 1-31
+README.md
+  s_d39a1c837ec862::t_0168eec4fb4377 25,28,41
+  s_d39a1c837ec862::t_b0b756ef0e8cfe 1-24,26-27,29-40,42-51,58-60
+  s_d39a1c837ec862::t_36e3834a38bf7d 52-57
+responses-json-format.middleware.js
+  s_d39a1c837ec862::t_90271cfc6b0c66 9-10,23,25,29
+  s_d39a1c837ec862::t_b0b756ef0e8cfe 1-8,11-22,24,26-28,30-44,48-67
+  s_d39a1c837ec862::t_ff66addc60e925 45-47
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "1317b5e042a1a3c7a5de12fb98c82de94ebbcb5a",
+  "prompts": {},
+  "sessions": {
+    "s_d39a1c837ec862": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a16638-fe2f-79b0-83f0-3e09657a3f30",
+        "model": "workbuddy-2/cn:deepseek-v4.1-flash"
+      },
+      "human_author": "ShakePeng <14865846+ShakePeng@users.noreply.github.com>"
+    }
+  }
+}
