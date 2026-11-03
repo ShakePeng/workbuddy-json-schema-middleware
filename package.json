@@ -1,6 +1,6 @@
 {
   "name": "magpie-middleware-responses-json-format",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "Pass Responses text.format JSON constraints through the last user input for Magpie",
   "type": "module",
