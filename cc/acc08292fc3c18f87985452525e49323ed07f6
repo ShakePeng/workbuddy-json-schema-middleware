@@ -1,0 +1,25 @@
+package.json
+  s_e2bfed8f9f9ddd::t_74322ff1a37992 5
+README.md
+  s_e2bfed8f9f9ddd::t_74322ff1a37992 5,11-12,36,38,40-41
+test/responses-json-format.test.js
+  s_e2bfed8f9f9ddd::t_74322ff1a37992 19,23,37-41,47,53-55,58,61-65,71-127,133,138,141-142,159-163,181,187,193,199,206
+responses-json-format.middleware.js
+  s_e2bfed8f9f9ddd::t_b192300055d1f3 1-2,19,57-77,84-88,91-93
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "ccacc08292fc3c18f87985452525e49323ed07f6",
+  "prompts": {},
+  "sessions": {
+    "s_e2bfed8f9f9ddd": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a19ff4-f5a5-7b72-935c-6827675231f4",
+        "model": "workbuddy-manager/deepseek-v4.1-flash"
+      },
+      "human_author": "ShakePeng <14865846+ShakePeng@users.noreply.github.com>"
+    }
+  }
+}
