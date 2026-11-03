@@ -1,0 +1,19 @@
+package.json
+  s_e2bfed8f9f9ddd::t_4087ada22acd5f 3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "0aac299fae8e86217ad2d573be773645e49d16d1",
+  "prompts": {},
+  "sessions": {
+    "s_e2bfed8f9f9ddd": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a19ff4-f5a5-7b72-935c-6827675231f4",
+        "model": "workbuddy-manager/deepseek-v4.1-flash"
+      },
+      "human_author": "ShakePeng <14865846+ShakePeng@users.noreply.github.com>"
+    }
+  }
+}
