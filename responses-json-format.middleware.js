@@ -1,5 +1,5 @@
-// Responses API 的 text.format 在中转层可能被丢弃。这里把 JSON 约束写进
-// instructions，让不支持 response_format 的上游模型仍能按 schema 输出。
+// Responses API 的 text.format 在中转层可能被丢弃。部分上游还会丢弃
+// instructions/system 消息，因此这里把 JSON 约束放进最后一条 user 输入。
 
 const MARKER = "<!-- magpie-responses-json-format -->";
 
@@ -16,7 +16,7 @@ export function onRequest(body, ctx) {
   const instruction = buildInstruction(format);
   if (!instruction) return;
 
-  body.instructions = appendInstruction(body.instructions, instruction);
+  body.input = appendToLastUserInput(body.input, instruction);
   return body;
 }
 
@@ -54,14 +54,42 @@ function buildInstruction(format) {
   return lines.join("\n");
 }
 
-function appendInstruction(current, addition) {
+function appendToLastUserInput(input, addition) {
+  if (typeof input == "string") {
+    if (input.includes(MARKER)) return input;
+    return input ? input + "\n\n" + addition : addition;
+  }
+  if (!Array.isArray(input)) {
+    return [{ role: "user", content: addition }];
+  }
+
+  for (let index = input.length - 1; index >= 0; index--) {
+    const item = input[index];
+    if (!item || item.role != "user") continue;
+    if (JSON.stringify(item).includes(MARKER)) return input;
+    item.content = appendToContent(item.content, addition);
+    return input;
+  }
+
+  return [...input, { role: "user", content: addition }];
+}
+
+function appendToContent(current, addition) {
   if (typeof current == "string") {
     if (current.includes(MARKER)) return current;
     return current ? current + "\n\n" + addition : addition;
   }
   if (Array.isArray(current)) {
     if (current.some((part) => JSON.stringify(part).includes(MARKER))) return current;
+    const lastText = current[current.length - 1];
+    if (lastText && lastText.type == "input_text" && typeof lastText.text == "string") {
+      lastText.text = lastText.text ? lastText.text + "\n\n" + addition : addition;
+      return current;
+    }
     return [...current, { type: "input_text", text: addition }];
+  }
+  if (current && typeof current == "object") {
+    return [current, { type: "input_text", text: addition }];
   }
   return addition;
 }
